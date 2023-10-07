@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script defer type="module" src="src/js/controller.js"></script>
+    <title>tasks</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>tasks</h1>
+      <div class="header__checkbox">
+        <input type="checkbox" class="header__checkbox--input" />
+        <p class="header__checkbox--text">完了タスクを表示</p>
+      </div>
+    </header>
+    <main>
+      <div class="orderSelect">
+        <p class="orderSelect__text">並び順</p>
+        <select name="order" id="order" class="orderSelect__select">
+          <option value="old">古い順</option>
+          <option value="new">新しい順</option>
+          <option value="deadline">期限が近い順</option>
+          <option value="importance">重要度が高い順</option>
+        </select>
+      </div>
+      <ul class="list">
+        <div class="list__container">
+          <!-- <li class="list__item" data-id="1">
+            <input type="checkbox" class="list__item--checkbox" />
+            <div class="list__item--content">
+              <div
+                class="list__item--content--importance list__item--content--importance--crucial"
+              >
+                死ぬほど重要
+              </div>
+              <div class="list__item--content--title">宿題やる</div>
+              <div class="list__item--content--deadline">期限:2023/11/17</div>
+              <div class="list__item--content--notes">
+                <img
+                  src="/src/img/comment.svg"
+                  alt=""
+                  class="list__item--content--notes--icon"
+                />
+                <p class="list__item--content--notes--comment">
+                  これやらないと留年なので、確実にやる。去年、他のやつをパクった先輩が失格になったので、パクリなし。
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="list__item" data-id="2">
+            <input type="checkbox" class="list__item--checkbox" />
+            <div class="list__item--content">
+              <div
+                class="list__item--content--importance list__item--content--importance--important"
+              >
+                重要
+              </div>
+              <div class="list__item--content--title">
+                教授のところに謝りに行く
+              </div>
+              <div class="list__item--content--deadline">期限:なし</div>
+              <div class="list__item--content--notes">
+                <img
+                  src="/src/img/comment.svg"
+                  alt=""
+                  class="list__item--content--notes--icon"
+                />
+                <p class="list__item--content--notes--comment">
+                  無断欠席で落第しそうなので、救済を求めに行く。差し入れのお菓子を持っていくべき。
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="list__item" data-id="3">
+            <input type="checkbox" class="list__item--checkbox" />
+
+            <div class="list__item--content">
+              <div
+                class="list__item--content--importance list__item--content--importance--unnecessary"
+              >
+                やらなくてもいい
+              </div>
+              <div class="list__item--content--title">友達にノート貸す</div>
+              <div class="list__item--content--deadline">期限:2023/12/18</div>
+              <div class="list__item--content--notes">
+                <img
+                  src="/src/img/comment.svg"
+                  alt=""
+                  class="list__item--content--notes--icon"
+                />
+                <p class="list__item--content--notes--comment">
+                  貸しても良いことないので、貸さなくてもいい。
+                </p>
+              </div>
+            </div>
+          </li> -->
+        </div>
+        <div class="addNewTask">
+          <button class="addNewTask__btn">Add New</button>
+          <form class="addNewTask__form">
+            <div
+              class="addNewTask__form--item addNewTask__form--item--importance"
+            >
+              <label for="importance">重要度</label>
+              <select
+                name="importance"
+                id="importance"
+                class="addNewTask__form--inportance"
+              >
+                <option value="死ぬほど重要">死ぬほど重要</option>
+                <option value="重要">重要</option>
+                <option value="普通">普通</option>
+                <option value="やらなくてもいい">やらなくてもいい</option>
+              </select>
+            </div>
+            <div
+              class="addNewTask__form--item addNewTask__form--item--taskTitle"
+            >
+              <label for="taskTitle">タスク名</label>
+              <input
+                type="text"
+                name="taskTitle"
+                id="taskTitle"
+                class="addNewTask__form--title"
+              />
+            </div>
+            <div
+              class="addNewTask__form--item addNewTask__form--item--deadline"
+            >
+              <label for="deadline">期限</label>
+              <input type="date" name="deadline" id="deadline" />
+            </div>
+            <div class="addNewTask__form--item addNewTask__form--item--comment">
+              <label for="comment">備考</label>
+              <textarea name="comment" id="comment" rows="3"></textarea>
+            </div>
+
+            <div class="addNewTask__form--item addNewTask__form--item--btn">
+              <button type="submit">追加</button>
+            </div>
+          </form>
+        </div>
+      </ul>
+    </main>
+    <!-- <footer></footer> -->
+  </body>
+</html>
